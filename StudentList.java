@@ -1,6 +1,7 @@
 import java.io.*;
 import java.text.*;
 import java.util.*;
+import static java.lang.Math.*;
 public class StudentList {
 	public static void main(String[] args) {
 
@@ -29,10 +30,9 @@ public class StudentList {
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
 			String r = s.readLine();
-			System.out.println(r);
-			String i[] = r.split(",");	
-			Random x = new Random();
-				int y = x.nextInt();
+			String i[] = r.split(",");
+				double z = Math.random() * 4.0;
+				int y = (int)z;
 					System.out.println(i[y]);
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");			
@@ -99,4 +99,5 @@ public class StudentList {
 		 System.out.println("please put a valid argument");
 		}
 	}
+	
 }
