@@ -1,7 +1,6 @@
 import java.io.*;
 import java.text.*;
 import java.util.*;
-import static java.lang.Math.*;
 
 public class StudentList {
 	public static void main(String[] args) {
@@ -38,7 +37,7 @@ public class StudentList {
 					String df = constant.df;
 					DateFormat dateFormat = new SimpleDateFormat(df);
 					String fd = dateFormat.format(d);
-					s.write(Br+constant.comma + t + constant.update + fd);
+					s.write(constant.Br+constant.comma + t + constant.update + fd);
 					s.close();
 				} catch (Exception ignored) {
 				}
@@ -47,12 +46,12 @@ public class StudentList {
 				System.out.println(constant.load);
 				try {
 					String[] student = Student();
-					boolean done = false;
+					boolean done = true;
 					String name = args[0].substring(1);
-					for (int idx = 0; idx < student.length && !done; idx++) {
+					for (int idx = 0; idx < student.length && done; idx++) {
 						if (student[idx].equals(name)) {
 							System.out.println(constant.found);
-							done = true;
+							done = false;
 						}
 					}
 				} catch (Exception ignored) {
@@ -80,7 +79,6 @@ public class StudentList {
 				new InputStreamReader(
 						new FileInputStream(constant.StudentList)));
 		String names = reader.readLine();
-		String[] studentName = names.split(constant.comma);
-		return studentName;
+		return names.split(constant.comma);
 	}
 }
