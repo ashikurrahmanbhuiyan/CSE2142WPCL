@@ -15,6 +15,6 @@ public class constant {
     public static String update = "\nList last updated on ";
     public static String df = "dd/mm/yyyy-hh:mm:ss a";
     public static String Br = "\n";
-
-
+    public static String space = " ";
+    
 }
